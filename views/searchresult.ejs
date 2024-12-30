@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        <% searchResults.forEach(function(book) { %>
+            <li><%= book.name %> - £<%= book.price %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>
