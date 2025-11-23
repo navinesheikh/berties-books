@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Setup express, ejs and mysql
 var express = require ('express')
 var ejs = require('ejs')
@@ -17,12 +19,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 // Define the database connection
-const db = mysql.createConnection ({
-    host: 'localhost',
-    user: 'berties_books_app',
-    password: 'qwertyuiop',
-    database: 'berties_books'
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
+
 // Connect to the database
 db.connect((err) => {
     if (err) {
