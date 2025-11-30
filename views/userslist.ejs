@@ -25,3 +25,14 @@
                     <td><%= user.firstName %></td>
                     <td><%= user.lastName %></td>
                     <td><%= user.email %></td>
+                </tr>
+            <% }); %>
+        <% } else { %>
+            <tr>
+                <td colspan="4">No users found.</td>
+            </tr>
+        <% } %>
+    </table>
+
+</body>
+</html>
