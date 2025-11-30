@@ -2,33 +2,26 @@
 <html>
 <head>
     <title>Users - Bertie's Books</title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
 </head>
 <body>
-<h1>Registered Users</h1>
 
-<table border="1" cellpadding="5">
-    <tr>
-        <th>Username</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Email</th>
-    </tr>
+    <%- include("partials/header") %>
 
-    <% if (users && users.length > 0) { %>
-        <% users.forEach(function(user) { %>
-            <tr>
-                <td><%= user.username %></td>
-                <td><%= user.firstName %></td>
-                <td><%= user.lastName %></td>
-                <td><%= user.email %></td>
-            </tr>
-        <% }); %>
-    <% } else { %>
+    <h1>Registered Users</h1>
+
+    <table border="1" cellpadding="5">
         <tr>
-            <td colspan="4">No users found.</td>
+            <th>Username</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
         </tr>
-    <% } %>
-</table>
 
-</body>
-</html>
+        <% if (users && users.length > 0) { %>
+            <% users.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.username %></td>
+                    <td><%= user.firstName %></td>
+                    <td><%= user.lastName %></td>
+                    <td><%= user.email %></td>

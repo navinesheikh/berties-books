@@ -1,23 +1,36 @@
-<h1>Login Audit</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Audit</title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
 
-<table border="1" cellpadding="5">
-  <tr>
-    <th>ID</th>
-    <th>Username</th>
-    <th>Success</th>
-    <th>Time</th>
-  </tr>
+    <%- include("partials/header") %>
 
-  <% if (logs && logs.length > 0) { %>
-    <% logs.forEach(function(log) { %>
+    <h1>Login Audit</h1>
+
+    <table border="1" cellpadding="5">
       <tr>
-        <td><%= log.id %></td>
-        <td><%= log.username %></td>
-        <td><%= log.success ? 'Yes' : 'No' %></td>
-        <td><%= log.time %></td>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Success</th>
+        <th>Time</th>
       </tr>
-    <% }); %>
-  <% } else { %>
-    <tr><td colspan="4">No login attempts yet.</td></tr>
-  <% } %>
-</table>
+
+      <% if (logs && logs.length > 0) { %>
+        <% logs.forEach(function(log) { %>
+          <tr>
+            <td><%= log.id %></td>
+            <td><%= log.username %></td>
+            <td><%= log.success ? 'Yes' : 'No' %></td>
+            <td><%= log.time %></td>
+          </tr>
+        <% }); %>
+      <% } else { %>
+        <tr><td colspan="4">No login attempts yet.</td></tr>
+      <% } %>
+    </table>
+
+</body>
+</html>

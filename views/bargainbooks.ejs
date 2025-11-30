@@ -2,14 +2,18 @@
 <html>
 <head>
     <title>Bargain Books</title>
-    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
 </head>
 <body>
+
+    <%- include("partials/header") %>
+
     <h1>Bargain Books</h1>
     <ul>
         <% bargainBooks.forEach(function(book) { %>
             <li><%= book.name %> - £<%= book.price %></li>
         <% }); %>
     </ul>
+
 </body>
 </html>

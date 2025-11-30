@@ -2,21 +2,25 @@
 <html>
 <head>
     <title>Login - Bertie's Books</title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
 </head>
 <body>
-<h1>Login</h1>
 
-<form action="/users/loggedin" method="POST">
-    <p>Username:
-        <input type="text" name="username" required />
-    </p>
+    <%- include("partials/header") %>
 
-    <p>Password:
-        <input type="password" name="password" required />
-    </p>
+    <h1>Login</h1>
 
-    <input type="submit" value="Login" />
-</form>
+    <form action="/users/loggedin" method="POST">
+        <p>Username:
+            <input type="text" name="username" required />
+        </p>
+
+        <p>Password:
+            <input type="password" name="password" required />
+        </p>
+
+        <input type="submit" value="Login" />
+    </form>
 
 </body>
 </html>

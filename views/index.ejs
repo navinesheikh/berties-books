@@ -1,16 +1,15 @@
 <!doctype html>
 <html>
   <head>
-    <title>Welcome to <%=shopName%></title>
-    <link rel="stylesheet"  type="text/css" href="/main.css" />
+    <title>Welcome to <%= shopName %></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
   </head>
   <body>
-    <h1>Welcome to <%=shopName%></h1>
-    <p><a href="about">About <%=shopName%></a></p>
-    <p><a href="search">Search for books</a></p>
-    <p><a href="register">Register with us</a></p>
-    <p><a href="list">Book List</a></p>
-    <p><a href="addbook">Add a Book</a></p>
-    <p><a href="bargainbooks">Bargain Books!</a></p>
+
+    <%- include("partials/header") %>
+
+    <h1>Welcome to <%= shopName %></h1>
+    <p>Discover our amazing collection of books — explore, search, or find a bargain! 📚✨</p>
+
   </body>
 </html>
