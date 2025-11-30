@@ -11,7 +11,7 @@ const { check, validationResult } = require('express-validator');
 const redirectLogin = (req, res, next) => {
     if (!req.session.userId) {
         // Not logged in → go to login page
-        res.redirect('/users/login');
+        res.redirect('users/login');
     } else {
         // Logged in → carry on
         next();
@@ -266,7 +266,7 @@ router.post('/users/loggedin', (req, res) => {
                 req.session.userId = username;
 
                 // Send them to the protected page
-                res.redirect('/list');
+                res.redirect('list');
             } else {
                 // Wrong password -> log failure
                 db.query("INSERT INTO login_audit (username, success) VALUES (?, 0)", [username]);
